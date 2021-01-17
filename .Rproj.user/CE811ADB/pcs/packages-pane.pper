@@ -1,0 +1,7 @@
+{
+    "installOptions" : {
+        "installDependencies" : true,
+        "installFromRepository" : true,
+        "libraryPath" : "C:/Users/foha2/OneDrive/DOCUMENTS/R/win-library/4.0"
+    }
+}
