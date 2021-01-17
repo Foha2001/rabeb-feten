@@ -24,3 +24,16 @@ summary(Classeur)
 model <- glm(INNOV_VERTE2~., family="binomial",data=data2)
 summary(model)
 anova(model, test="Chisq")
+#########étudier l'erreur du model  
+par(mfrow=c(1,2))
+hist(residuals(model), main="Histogram")
+qqnorm(resid(model),datax=TRUE)
+#########☻tester la normalité 
+library(tseries)
+jarque.bera.test(residuals(model))
+##########comparer les résudus avecles prévus 
+plot(residuals(model)~fitted(model),xlab="Valeurs prédites",
+ylab="residus")
+par(mfrow=c(1,2))
+plot(model,1:2,col.smooth="black")
+data2<-data2[-c(56,57),]
